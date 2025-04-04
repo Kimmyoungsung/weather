@@ -1,0 +1,26 @@
+/* 배경 이미지 설정 */
+body {
+  background: url(https://img.freepik.com/free-vector/flat-design-monsoon-season-clouds-illustration_23-2149424294.jpg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0; /* body 기본 여백 제거 */
+}
+
+/* .container 설정 */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 수평 중앙 정렬 */
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* .weather-box 설정 */
+.weather-box {
+  border: 3px solid white;
+  padding: 50px;
+  border-radius: 30px;
+  background-color: white;
+  text-align: center; /* 내용 중앙 정렬 */
+}
