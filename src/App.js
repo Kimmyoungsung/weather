@@ -27,7 +27,7 @@ function App() {
   // 날씨 정보 가져오는 함수
   const getWeatherByCurrentLocation = async (lat, lon) => {
     let apiKey = '1d46d58529e4b77a4450ba18e562483d';  // API 키
-    let url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
     try {
       let response = await fetch(url);
