@@ -9,18 +9,21 @@ body {
 
 /* .container 설정 */
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* 수평 중앙 정렬 */
-  flex-direction: column;
   height: 100vh;
 }
 
 /* .weather-box 설정 */
-.weather-box {
-  border: 3px solid white;
+.weather-box, .spinner-box {
+  height: 230px;
   padding: 50px;
   border-radius: 30px;
-  background-color: white;
-  text-align: center; /* 내용 중앙 정렬 */
+}
+.weather-box.card{
+  background-color: #c5c3ff;
+}
+.weather-box.card .card-title{
+  font-weight: bold;
+}
+.spinner-box{
+  vertical-align: middle;
 }

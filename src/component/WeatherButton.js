@@ -1,14 +1,14 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 const WeatherButton = () => {
   return (
-    <div>
-      <Button variant="warning">Current Location</Button>
-      <Button variant="warning">Korea</Button>
-      <Button variant="warning">Paris</Button>
-    </div>
+    <ButtonGroup className="mt-2" aria-label="지역 버튼">
+      <Button variant="secondary">Current Location</Button>
+      <Button variant="secondary">Korea</Button>
+      <Button variant="secondary">Paris</Button>
+    </ButtonGroup>
   );
 };
 

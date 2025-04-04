@@ -1,8 +1,13 @@
 import './App.css';
 import { useEffect, useState } from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Spinner from 'react-bootstrap/Spinner';
 import WeatherBox from './component/WeatherBox';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WeatherButton from './component/WeatherButton';
+
 
 // 1. 앱이 실행되자마자 현재기반의 날씨가 보인다.
 // 2. 날씨정보는 도시, 섭씨, 화씨 날씨 상태
@@ -42,19 +47,36 @@ function App() {
 
   useEffect(() => {
     getCurrentLocation();
-  }, []);
+  });
 
   return (
-    <div>
-      <div className="container">
-        {loading ? (
-          <div>Loading...</div>  // 로딩 중일 때 표시
-        ) : (
-          <WeatherBox weather={weather} />  // 날씨 정보가 로딩되면 전달
-        )}
-        <WeatherButton />
-      </div>
-    </div>
+    <Container fluid className="container d-flex align-items-center flex-column justify-content-center " >
+      <Row>
+        {loading ? ( 
+            <div className="spinner-box">
+              <Spinner animation="border" variant="warning" />
+            </div>
+          ) : (
+            <WeatherBox weather={weather} />  // 날씨 정보가 로딩되면 전달p
+          )}
+      </Row>
+      <Row>
+        <Col>
+          <WeatherButton />
+        </Col>
+      </Row>
+    </Container>
+
+    // <div>
+    //   <div className="container">
+    //     {loading ? (
+    //       <div>Loading...</div>  // 로딩 중일 때 표시
+    //     ) : (
+    //       <WeatherBox weather={weather} />  // 날씨 정보가 로딩되면 전달
+    //     )}
+    //     <WeatherButton />
+    //   </div>
+    // </div>
   );
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from 'react-bootstrap/Card';
 
 const WeatherBox = ({ weather }) => {
   if (!weather) {
@@ -6,11 +7,17 @@ const WeatherBox = ({ weather }) => {
   }
 
   return (
-    <div className="weather-box">
-      <div>{weather.name}</div>
-      <h2>{weather.main.temp}°C</h2>
-      <h3>{weather.weather[0].description}</h3>
-    </div>
+    <Card className="weather-box text-center" style={{ width: '18rem' }}>
+      <Card.Body>
+        <Card.Title>{weather.name}</Card.Title>
+        <Card.Text style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <span>{weather.main.temp}°C</span>
+          <span style={{ margin: '0 5px' }}>/</span>
+          <span>{(weather.main.temp * 9 / 5 + 32).toFixed(1)}°F</span>
+        </Card.Text>
+        <Card.Text>{weather.weather[0].description}</Card.Text>
+      </Card.Body>
+    </Card>
   );
 };
 
