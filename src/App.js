@@ -14,10 +14,14 @@ function App() {
   const [city, setCity] = useState('');
   const [activeCity, setActiveCity] = useState('current');
   const cities = ['paris', 'new york', 'tokyo', 'seoul'];
-  const apiKey = '1d46d58529e4b77a4450ba18e562483d';
+  const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
 
   const getWeatherByCurrentLocation = async (lat, lon) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    console.log("API Key: ", process.env.REACT_APP_WEATHER_API_KEY);
+
+    
+
     try {
       setLoading(true);
       const response = await fetch(url);
